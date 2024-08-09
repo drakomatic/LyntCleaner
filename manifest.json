@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "LyntCleaner",
+    "description": "An extension to make Lyntr that much easier on the eyes.",
+    "version": "0.2",
+    "action": {
+      "default_popup": "Popup/settings.html",
+      "default_icon": "Icons/LC128.png"
+    },
+    "content_scripts": [
+    {
+      "js": ["scripts/themeify.js"],
+      "matches": [
+        "https://lyntr.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "Icons/LC16.png",
+    "32": "Icons/LC32.png",
+    "48": "Icons/LC48.png",
+    "128": "Icons/LC128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "InsertYourIDHere"
+    }
+  },
+  "web_accessible_resources":[{
+    "resources": [ "Shared/UserPrefs.json" ],
+    "matches": [ "https://lyntr.com/*" ]
+  }],
+  "permissions": ["storage"]
+}
